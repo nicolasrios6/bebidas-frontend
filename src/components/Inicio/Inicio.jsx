@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react"
-import Banner from "../Banner/Banner"
 import Card from "../Card/Card"
-import api from "../../services/api"
 import { getProductos, getProductosByCategoria } from "../../services/productsServices"
 import './Inicio.scss'
 
@@ -39,13 +37,13 @@ const Inicio = () => {
                     <option value="Whiskies">Whiskies</option>
                 </select>
                 <div className="container">
-                    <div className="row">
+                    <div className="row ">
                         {
                             productos.map((producto) => {
                                 return(
-                                    <div className="col">  
+                                    <div className="col d-flex justify-content-center mb-5" key={producto.id}>  
                                         <Card
-                                            key={producto.id}
+                                            
                                             nombre={producto.nombre}
                                             imagen={`http://localhost:8080/uploads/${producto.imagen}`}
                                             bodega={producto.bodega}

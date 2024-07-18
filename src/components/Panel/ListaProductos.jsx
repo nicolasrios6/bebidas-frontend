@@ -37,10 +37,10 @@ const ListaProductos = () => {
     }
 
     const handleSave = async (id, formData) => {
-        console.log('Producto a guardar:', formData);
+        // console.log('Producto a guardar:', formData);
     
-        if (formData.get('id')) { // Verifica si el ID está presente en el FormData
-            await updateProducto(formData.get('id'), formData);
+        if (id) { // Verifica si el ID está presente en el FormData
+            await updateProducto(id, formData);
         } else {
             await createProducto(formData);
         }
@@ -79,6 +79,7 @@ const ListaProductos = () => {
                     <th scope="col">Bodega</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Categoría</th>
+                    <th scope="col">Imagen</th>
                     <th scope="col">Acciones</th>
                     </tr>
                 </thead>

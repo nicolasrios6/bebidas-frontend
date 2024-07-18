@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 
-const ProductoForm = ({ producto, onSave, onCancel }) => {
+// eslint-disable-next-line react/prop-types
+const FormularioProducto = ({producto, onSave, onCancel }) => {
     const [formState, setFormState] = useState({
         id: producto ? producto.id : "",
         nombre: producto ? producto.nombre : "",
@@ -57,10 +59,9 @@ const ProductoForm = ({ producto, onSave, onCancel }) => {
         }
     
       // Verifica el contenido de FormData
-        console.log('FormData antes de enviar:', [...formData.entries()]);
-        const dataForm = formData
+        // console.log('FormData antes de enviar:', [...formData.entries()]);
     
-        onSave(formState.id, dataForm);
+        onSave(formState.id, formData);
     };
     
 
@@ -153,4 +154,4 @@ const ProductoForm = ({ producto, onSave, onCancel }) => {
     );
 };
 
-export default ProductoForm;
+export default FormularioProducto;
