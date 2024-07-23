@@ -37,8 +37,6 @@ const ListaProductos = () => {
     }
 
     const handleSave = async (id, formData) => {
-        // console.log('Producto a guardar:', formData);
-    
         if (id) { // Verifica si el ID está presente en el FormData
             await updateProducto(id, formData);
         } else {
@@ -95,7 +93,7 @@ const ListaProductos = () => {
                                     <td>${producto.precio}</td>
                                     <td>{producto.categoria}</td>
                                     <td>
-                                        <img src={`http://localhost:8080/uploads/${producto.imagen}`} alt={producto.nombre} style={{width:'100px'}}/>
+                                        <img src={producto.imagenUrl} alt={producto.nombre} style={{width:'100px'}}/>
                                     </td>
                                     <td>
                                         <button onClick={() => handleEdit(producto)}>Editar</button>

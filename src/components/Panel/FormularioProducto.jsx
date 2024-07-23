@@ -11,7 +11,7 @@ const FormularioProducto = ({producto, onSave, onCancel }) => {
         varietal: producto ? producto.varietal : "",
         categoria: producto ? producto.categoria : "",
         imagen: null,
-        imagenUrl: producto ? `http://localhost:8080/uploads/${producto.imagen}` : null,
+        imagenUrl: producto ? producto.imagenUrl : null,
     });
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const FormularioProducto = ({producto, onSave, onCancel }) => {
                 varietal: producto.varietal,
                 categoria: producto.categoria,
                 imagen: null,
-                imagenUrl: `http://localhost:8080/uploads/${producto.imagen}`,
+                imagenUrl: producto.imagenUrl,
             });
         }
     }, [producto]);
@@ -58,8 +58,6 @@ const FormularioProducto = ({producto, onSave, onCancel }) => {
             formData.append("imagen", formState.imagen);
         }
     
-      // Verifica el contenido de FormData
-        // console.log('FormData antes de enviar:', [...formData.entries()]);
     
         onSave(formState.id, formData);
     };

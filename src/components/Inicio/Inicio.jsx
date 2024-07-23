@@ -45,7 +45,7 @@ const Inicio = () => {
                                         <Card
                                             
                                             nombre={producto.nombre}
-                                            imagen={`http://localhost:8080/uploads/${producto.imagen}`}
+                                            imagen={producto.imagenUrl}
                                             bodega={producto.bodega}
                                             varietal={producto.varietal}
                                             precio={producto.precio}
